@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>张小剩</title>
+  <title>张小剩的博客</title>
   
   <subtitle>One two one ...</subtitle>
   <link href="https://alwayscn.github.io/alwaysblog/atom.xml" rel="self"/>
@@ -10,7 +10,7 @@
   <id>https://alwayscn.github.io/alwaysblog/</id>
   
   <author>
-    <name>张小剩的博客</name>
+    <name>张小剩</name>
     
   </author>
   
@@ -146,31 +146,21 @@
   </entry>
   
   <entry>
-    <title>linux 常见问题总结</title>
-    <link href="https://alwayscn.github.io/alwaysblog/post/3467120238/"/>
-    <id>https://alwayscn.github.io/alwaysblog/post/3467120238/</id>
+    <title>MacOS 常见问题总结</title>
+    <link href="https://alwayscn.github.io/alwaysblog/post/1992094617/"/>
+    <id>https://alwayscn.github.io/alwaysblog/post/1992094617/</id>
     <published>2021-11-01T16:00:00.000Z</published>
-    <updated>2022-02-04T09:45:53.715Z</updated>
+    <updated>2022-02-04T09:45:53.719Z</updated>
     
-    
-      
-      
-        
-        
-    <summary type="html"></summary>
-        
-      
     
     
     
     <category term="操作系统" scheme="https://alwayscn.github.io/alwaysblog/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
-    <category term="Linux" scheme="https://alwayscn.github.io/alwaysblog/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Linux/"/>
+    <category term="MacOS" scheme="https://alwayscn.github.io/alwaysblog/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/MacOS/"/>
     
     
-    <category term="linux" scheme="https://alwayscn.github.io/alwaysblog/tags/linux/"/>
-    
-    <category term="问题总结" scheme="https://alwayscn.github.io/alwaysblog/tags/%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
+    <category term="MacOS 问题总结" scheme="https://alwayscn.github.io/alwaysblog/tags/MacOS-%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
@@ -204,21 +194,31 @@
   </entry>
   
   <entry>
-    <title>MacOS 常见问题总结</title>
-    <link href="https://alwayscn.github.io/alwaysblog/post/1992094617/"/>
-    <id>https://alwayscn.github.io/alwaysblog/post/1992094617/</id>
+    <title>linux 常见问题总结</title>
+    <link href="https://alwayscn.github.io/alwaysblog/post/3467120238/"/>
+    <id>https://alwayscn.github.io/alwaysblog/post/3467120238/</id>
     <published>2021-11-01T16:00:00.000Z</published>
-    <updated>2022-02-04T09:45:53.719Z</updated>
+    <updated>2022-02-04T09:45:53.715Z</updated>
     
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
     
     
     
     <category term="操作系统" scheme="https://alwayscn.github.io/alwaysblog/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
-    <category term="MacOS" scheme="https://alwayscn.github.io/alwaysblog/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/MacOS/"/>
+    <category term="Linux" scheme="https://alwayscn.github.io/alwaysblog/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/Linux/"/>
     
     
-    <category term="MacOS 问题总结" scheme="https://alwayscn.github.io/alwaysblog/tags/MacOS-%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
+    <category term="linux" scheme="https://alwayscn.github.io/alwaysblog/tags/linux/"/>
+    
+    <category term="问题总结" scheme="https://alwayscn.github.io/alwaysblog/tags/%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
@@ -250,35 +250,6 @@
   </entry>
   
   <entry>
-    <title>shell 编程</title>
-    <link href="https://alwayscn.github.io/alwaysblog/post/4046588353/"/>
-    <id>https://alwayscn.github.io/alwaysblog/post/4046588353/</id>
-    <published>2021-11-01T16:00:00.000Z</published>
-    <updated>2022-02-04T11:23:22.470Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html"></summary>
-        
-      
-    
-    
-    
-    <category term="后端领域" scheme="https://alwayscn.github.io/alwaysblog/categories/%E5%90%8E%E7%AB%AF%E9%A2%86%E5%9F%9F/"/>
-    
-    <category term="编程语言" scheme="https://alwayscn.github.io/alwaysblog/categories/%E5%90%8E%E7%AB%AF%E9%A2%86%E5%9F%9F/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-    
-    <category term="shell" scheme="https://alwayscn.github.io/alwaysblog/categories/%E5%90%8E%E7%AB%AF%E9%A2%86%E5%9F%9F/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/shell/"/>
-    
-    
-    <category term="shell" scheme="https://alwayscn.github.io/alwaysblog/tags/shell/"/>
-    
-  </entry>
-  
-  <entry>
     <title>python 零基础</title>
     <link href="https://alwayscn.github.io/alwaysblog/post/3308975195/"/>
     <id>https://alwayscn.github.io/alwaysblog/post/3308975195/</id>
@@ -306,6 +277,35 @@
     <category term="python 零基础" scheme="https://alwayscn.github.io/alwaysblog/tags/python-%E9%9B%B6%E5%9F%BA%E7%A1%80/"/>
     
     <category term="极客时间" scheme="https://alwayscn.github.io/alwaysblog/tags/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>shell 编程</title>
+    <link href="https://alwayscn.github.io/alwaysblog/post/4046588353/"/>
+    <id>https://alwayscn.github.io/alwaysblog/post/4046588353/</id>
+    <published>2021-11-01T16:00:00.000Z</published>
+    <updated>2022-02-04T11:23:22.470Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html"></summary>
+        
+      
+    
+    
+    
+    <category term="后端领域" scheme="https://alwayscn.github.io/alwaysblog/categories/%E5%90%8E%E7%AB%AF%E9%A2%86%E5%9F%9F/"/>
+    
+    <category term="编程语言" scheme="https://alwayscn.github.io/alwaysblog/categories/%E5%90%8E%E7%AB%AF%E9%A2%86%E5%9F%9F/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+    <category term="shell" scheme="https://alwayscn.github.io/alwaysblog/categories/%E5%90%8E%E7%AB%AF%E9%A2%86%E5%9F%9F/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/shell/"/>
+    
+    
+    <category term="shell" scheme="https://alwayscn.github.io/alwaysblog/tags/shell/"/>
     
   </entry>
   
