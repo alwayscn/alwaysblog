@@ -1,0 +1,780 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><link rel="apple-touch-icon" sizes="76x76" href="/favicon_2.ico"><link rel="icon" type="image/png" href="/favicon_2.ico"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="author" content="张小剩的博客"><meta name="description" content="One two one ..."><meta name="keywords" content="python,"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><title>python 基础 - 张小剩</title><link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.10.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.staticfile.org/mdbootstrap/4.8.7/css/mdb.min.css"><link rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/3.0.1/github-markdown.min.css"><link rel="stylesheet" href="//at.alicdn.com/t/font_1067060_qzomjdt8bmp.css"><link rel="stylesheet" href="/lib/prettify/tranquil-heart.min.css"><link rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css"><link rel="stylesheet" href="/css/main.css"><script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script><style type="text/css">.banner-bg{background-image:url(/static/images/wallhaven-8opx8k.jpg);background-position:center;background-repeat:repeat-y;background-size:cover;background-attachment:fixed}</style><meta name="generator" content="Hexo 5.4.1"><link rel="alternate" href="/atom.xml" title="张小剩" type="application/atom+xml">
+</head><body class="banner-bg"><header style="height:70vh"><nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar"><div class="container"><a class="navbar-brand" href="/">&nbsp;<strong>张小剩</strong>&nbsp;</a> <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><div class="animated-icon"><span></span><span></span><span></span></div></button><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav ml-auto text-center"><li class="nav-item"><a class="nav-link" href="/">主页</a></li><li class="nav-item"><a class="nav-link" href="/archives/">归档</a></li><li class="nav-item"><a class="nav-link" href="/categories/">分类</a></li><li class="nav-item"><a class="nav-link" href="/tags/">标签</a></li><li class="nav-item"><a class="nav-link" href="/links/">友链</a></li><li class="nav-item"><a class="nav-link" href="/about/">关于</a></li><li class="nav-item" id="search-btn"><a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i class="iconfont icon-search"></i>&nbsp;&nbsp;</a></li></ul></div></div></nav><div class="view intro-2 rgba-black-slight" id="background"><div class="full-bg-img"><div class="mask flex-center"><div class="container text-center white-text fadeInUp"><span class="h2" id="subtitle"></span><br><p class="mt-3"><i class="far fa-calendar-alt"></i> <span class="post-date">2021-10-02&nbsp;|&nbsp;</span> <i class="far fa-chart-bar"></i> <span class="post-count">6.1k</span>字&nbsp;|&nbsp; <i class="far fa-clock"></i> <span class="post-count">27</span>分钟</p></div></div></div></div></header><main id="mainContent" class="rgba-black-slight"><div class="container-fluid"><div class="row"><div class="d-none d-lg-block col-lg-2"></div><div class="col-lg-8 nopadding-md"><div class="py-5 z-depth-3" id="board"><div class="post-content mx-auto" id="post"><div class="markdown-body"><h2 id="Python-环境搭建"><a href="#Python-环境搭建" class="headerlink" title="Python 环境搭建"></a>Python 环境搭建</h2><ul><li>下载安装</li></ul><pre><code class="shell">$ 下载页面：https://www.python.org/downloads/windows/
+    2.7：https://www.python.org/downloads/release/python-2718/（选择：Windows x86-64 MSI installer）
+    3.8：https://www.python.org/downloads/release/python-385/（选择：Windows x86-64 executable installer）
+
+    2.7 版本直连：https://www.python.org/ftp/python/2.7.18/python-2.7.18.amd64.msi
+    3.7 版本直连：https://www.python.org/ftp/python/3.7.9/python-3.7.9-amd64.exe
+</code></pre><ul><li>pip 升级</li></ul><pre><code class="shell">$ python2 -m pip install --upgrade pip --force-reinstall
+$ python3 -m pip install --upgrade pip --force-reinstall
+</code></pre><ul><li>虚拟环境</li></ul><pre><code class="shell">在 python3 的环境下创建
+
+$ 安装虚拟环境软件包：pip3 install virtualenv
+$ 创建虚拟环境： virtualenv Venv
+$ 虚拟环境管理器安装： pip3 install virtualenvwrapper-win
+$ 添加全局变量配置虚拟环境路径： WORKON_HOME  / C:\Python\Virtualenv    =&gt; 虚拟环境都创建在此目录下
+    创建虚拟环境： mkvirtualenv Venv(虚拟环境名称)
+    激活虚拟环境： workon Venv(虚拟环境名称)
+    退出虚拟环境： deactivate
+    删除虚拟环境： rmvirtualenv Venv(虚拟环境名称)
+    列出虚拟环境： workon / lsvirtualenv
+
+    创建虚拟环境指定 Python 版本： mkvirtualenv --python==C:\Python\Python37\python.exe 虚拟环境名称
+</code></pre><ul><li>第三方包本地安装</li></ul><pre><code class="shell">$  **.whl : 
+$        pip install  **.whl
+$  **.egg : 
+$        1. 先下载ez_setup.py,运行python ez_setup 进行easy_install工具的安装
+$        2. easy_install **.egg
+$  **.zip / tar.gz
+        python setup.py install
+</code></pre><h2 id="Python-数据类型"><a href="#Python-数据类型" class="headerlink" title="Python 数据类型"></a>Python 数据类型</h2><p><strong>不可变数据类型：</strong> Number（数字）、String（字符串）、Tuple（元组）</p><p><strong>可变数据类型：</strong>   List（列表）、Dictionary（字典）、Set（集合）</p><p><strong>序列容器：</strong> String（字符串）、List（列表）Tuple（元组）</p><p><strong>非序列容器</strong>：Dictionary（字典）、Set（集合）</p><h3 id="数据类型之间的运算规则"><a href="#数据类型之间的运算规则" class="headerlink" title="数据类型之间的运算规则"></a>数据类型之间的运算规则</h3><ul><li>算术运算符</li></ul><pre><code>常见运算符：+ 、 - 、 * 、/ （/ 在 python2 和 python3 中的作用不同）
+
+** : 幂运算 2 ** 3 &lt;==&gt; 2 的三次方
+// : 取整运算
+%  ：取余运算
+
+/ 在python 2.X 当除数与被除数都是整数时，取整数，当其中一个为浮点数时，结果为浮点数，在 3.x 则直接为浮点数
+</code></pre><ul><li>赋值运算符</li></ul><pre><code>常见运算符：= 、+= 、-= 、*=、/= (A += B 相当于 A = A + B)
+
+//=    : A //= B &lt;==&gt; A = A // B
+%=    : A %= B &lt;==&gt; A = A % B
+**= : A **= B &lt;==&gt; A = A ** B
+</code></pre><ul><li>比较运算符</li></ul><pre><code>常见运算符：&gt;, &lt; , &gt;=, &lt;=, ==, != 
+
+Python 中 没有 全等于 ===
+</code></pre><ul><li>逻辑运算符</li></ul><pre><code class="python"># 逻辑运算符:逻辑与 and， 逻辑或 or， 逻辑非not (and，全真则真； or，全假为假)
+# and(且)  ==&gt; 非 0 为真， 0 为假
+ret = 0 and 2 # ==&gt; 第一个条件为假，没有必要检查第二个条件 故 输出第一个条件 0
+ret = 1 and 0 # ==&gt; 第一个条件为真，第二个条件必须执行   输出第二个条件 0
+ret = 1 and 2 # ==&gt; 第一个条件为真，第二个条件必须执行   输出第二个条件 2
+
+# or(或)   ==&gt; 一个为真则为真
+ret = 1 or 2  # 检查第一个条件，为真， 输出第一个条件 0
+ret = 0 or 1  # 第一个条件为假，第二个条件必须执行   输出第二个条件 1
+ret = 0 or 0  # 第一个条件为假，第二个条件必须执行   输出第二个条件 0
+</code></pre><ul><li><strong>数据类型之间运算规则</strong></li></ul><pre><code>总结：
+  1. 数字和数字之间可以进行所有的运算
+  2. 字符串和字符串之间只能进行加法运算
+  3. 数字和字符串之间只能进行乘法运算
+</code></pre><h3 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h3><p><strong>前提：可以转换为目标类型</strong></p><ul><li>转换为 Number 类型</li></ul><pre><code class="python">value = &#39;666&#39;
+int(value) # ==&gt; 666
+</code></pre><ul><li>转换为 String 类型</li></ul><pre><code class="python">value = 666
+str(value)  ==&gt; &#39;666&#39;
+</code></pre><ul><li>转换为 float 类型</li></ul><pre><code class="python">value = 666 # ‘666’呢？
+float(value)  ==&gt; 666.00
+</code></pre><h3 id="数字（Number）"><a href="#数字（Number）" class="headerlink" title="数字（Number）"></a>数字（Number）</h3><ul><li>整数（integer）</li><li>小数 / 浮点数（float）</li></ul><p><strong>[ 常用的数字函数 ]</strong></p><pre><code class="python">abs(x)          #返回数字的绝对值，如abs(-10) 返回 10
+math.fabs(x)    #返回数字的绝对值，如math.fabs(-10) 返回10.0
+exp(x)          #返回e的x次幂(e^x),如math.exp(1) 返回2.718281828459045
+math.log(x)     #返回x的对数如math.log(math.e)返回1.0,math.log(100,10)返回2.0
+math.log10(x)   #返回以10为基数的x的对数，如math.log10(100)返回 2.0
+math.modf(x)    #返回x的整数部分与小数部分，两部分的数值符号与x相同，整数部分以浮点型表示
+pow(x)          #返回x**y 运算后的值
+math.sqrt(x)    #返回数字x的平方根
+round(x,[n])    #返回浮点数x的四舍五入值，如给出n值，则代表舍入到小数点后的位数
+math.sin(x)     #返回的x弧度的正弦值
+</code></pre><h3 id="字符串（String）"><a href="#字符串（String）" class="headerlink" title="字符串（String）"></a>字符串（String）</h3><ul><li>字符串是 Python 中最常用的数据类型。我们可以使用引号( ’ 或 “ )来创建字符串</li><li>字符串切片索引</li></ul><pre><code class="python">str = &#39;Runoob&#39;
+
+print (str)          # 输出字符串
+print (str[0:-1])    # 输出第一个到倒数第二个的所有字符
+print (str[0])       # 输出字符串第一个字符
+print (str[2:5])     # 输出从第三个开始到第五个的字符
+print (str[2:])      # 输出从第三个开始的后的所有字符
+print (str * 2)      # 输出字符串两次
+print (str + &quot;TEST&quot;) # 连接字符串
+
+# 输出
+
+Runoob
+Runoo
+R
+noo
+noob
+RunoobRunoob
+RunoobTEST
+</code></pre><p><strong>[ python三引号 ]</strong></p><p>python 三引号允许一个字符串跨多行，字符串中可以包含换行符、制表符以及其他特殊字符</p><pre><code class="python">para_str = &quot;&quot;&quot;这是一个多行字符串的实例
+    多行字符串可以使用制表符
+    TAB ( \t )。
+    也可以使用换行符 [ \n ]。
+    &quot;&quot;&quot;
+print (para_str)
+# 输出
+
+这是一个多行字符串的实例
+多行字符串可以使用制表符
+TAB (    )。
+也可以使用换行符 [ 
+]。
+</code></pre><h3 id="列表（List）"><a href="#列表（List）" class="headerlink" title="列表（List）"></a>列表（List）</h3><ul><li>列表是最常用的 Python 数据类型，它可以作为一个方括号内的逗号分隔值出现，列表的数据项不需要具有相同的类型</li><li>创建一个列表，只要把逗号分隔的不同的数据项使用方括号括起来即可</li><li>列表切片索引</li></ul><p><strong>[ 常用的列表函数 ]</strong></p><pre><code class="python">list.append(obj)          #在列表末尾添加新的对象
+list.count(obj)           #统计某个元素在列表中出现的次数
+list.extend(seq)          #在列表末尾一次性追加另一个序列中的多个值（用新列表扩展原来的列表）
+list.index(obj)           #从列表中找出某个值第一个匹配项的索引位置
+list.pop([index=-1])      #移除列表中的一个元素（默认最后一个元素），并且返回该元素的值
+list.remove(obj)          #移除列表中某个值的第一个匹配项
+list.reverse()            #反向列表中元素
+list.sort( key=None, reverse=False)    #对原列表进行排序,True 降序,False 升序（默认）
+list.clear()              #清空列表
+list.copy()               #复制列表
+</code></pre><h3 id="元组（Tuple）"><a href="#元组（Tuple）" class="headerlink" title="元组（Tuple）"></a>元组（Tuple）</h3><ul><li>元组与列表类似，不同之处在于元组的元素不能修改</li></ul><h3 id="字典（Dictionary）"><a href="#字典（Dictionary）" class="headerlink" title="字典（Dictionary）"></a>字典（Dictionary）</h3><ul><li>字典是另一种可变容器模型，且可存储任意类型对象</li><li><strong>dict = {key1 : value1, key2 : value2 }：</strong>每个键值(key=&gt;value)对用冒号(:)分割，每个对之间用逗号(,)分割，整个字典包括在花括号({})中</li><li><strong>注意：</strong>键必须是唯一的，但值则不必；值可以取任何数据类型（如字符串，数字或元组），但键必须是不可变的。</li></ul><p><strong>[ 访问字典的值 ]</strong></p><pre><code class="python">dict = &#123;&#39;Name&#39;: &#39;Runoob&#39;, &#39;Age&#39;: 7, &#39;Class&#39;: &#39;First&#39;&#125;
+&#39;&#39;&#39;
+    del dict[&#39;Name&#39;]     # 删除键 &#39;Name&#39;
+    dict.clear()         # 清空字典
+    del dict             # 删除字典
+
+    &#39;&#39;&#39;
+print (&quot;dict[&#39;Name&#39;]: &quot;, dict[&#39;Name&#39;])
+print (&quot;dict[&#39;Age&#39;]: &quot;, dict[&#39;Age&#39;])
+# 输出
+dict[&#39;Name&#39;]:  Runoob
+    dict[&#39;Age&#39;]:  7
+</code></pre><p><strong>[ 字典键的特性 ]</strong></p><ul><li>不允许同一个键出现两次。创建时如果同一个键被赋值两次，后一个值会被记住</li></ul><pre><code class="python">dict = &#123;&#39;Name&#39;: &#39;Runoob&#39;, &#39;Age&#39;: 7, &#39;Name&#39;: &#39;小菜鸟&#39;&#125;
+
+print (&quot;dict[&#39;Name&#39;]: &quot;, dict[&#39;Name&#39;])
+123
+#输出
+dict[&#39;Name&#39;]:  小菜鸟
+    12
+</code></pre><ul><li>键必须不可变，所以可以用数字，字符串或元组充当，而用列表就不行</li></ul><pre><code class="python">dict = &#123;[&#39;Name&#39;]: &#39;Runoob&#39;, &#39;Age&#39;: 7&#125;
+
+print (&quot;dict[&#39;Name&#39;]: &quot;, dict[&#39;Name&#39;])
+123
+#输出
+Traceback (most recent call last):
+    File &quot;test.py&quot;, line 3, in &lt;module&gt;
+    dict = &#123;[&#39;Name&#39;]: &#39;Runoob&#39;, &#39;Age&#39;: 7&#125;
+    TypeError: unhashable type: &#39;list&#39;
+</code></pre><p><strong>[ 字典函数 ]</strong></p><pre><code class="python">radiansdict.clear()          #删除字典内所有元素
+pop(key[,default])           #删除字典给定键 key 所对应的值，返回值为被删除的值。key值必须给出。 否则，返回default值
+</code></pre><h3 id="集合（Set）"><a href="#集合（Set）" class="headerlink" title="集合（Set）"></a>集合（Set）</h3><ul><li>集合是一个无序的不重复元素序列，可以使用大括号 { } 或者 set() 函数创建集合</li><li><strong>注意：</strong>创建一个空集合必须用 set() 而不是 { }，因为 { } 是用来创建一个空字典</li></ul><pre><code class="python">basket = &#123;&#39;apple&#39;, &#39;orange&#39;, &#39;apple&#39;, &#39;pear&#39;, &#39;orange&#39;, &#39;banana&#39;&#125;
+print(basket)                      # 去重功能
+#输出
+&#123;&#39;orange&#39;, &#39;banana&#39;, &#39;pear&#39;, &#39;apple&#39;&#125;
+
+&#39;orange&#39; in basket                 # 快速判断元素是否在集合内
+#输出
+True
+
+&#39;crabgrass&#39; in basket
+#输出
+False
+
+# 下面展示两个集合间的运算
+a = set(&#39;abracadabra&#39;)
+b = set(&#39;alacazam&#39;)
+print(a)
+#输出                                  
+&#123;&#39;a&#39;, &#39;r&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;&#125;
+
+print(a - b)                              # 集合a中包含而集合b中不包含的元素
+#输出
+&#123;&#39;d&#39;, &#39;b&#39;, &#39;r&#39;&#125;
+
+print(a | b)                              # 集合a或b中包含的所有元素
+#输出
+&#123;&#39;c&#39;, &#39;b&#39;, &#39;r&#39;, &#39;z&#39;, &#39;l&#39;, &#39;m&#39;, &#39;a&#39;, &#39;d&#39;&#125;
+
+print(a &amp; b)                              # 集合a和b中都包含了的元素
+#输出
+&#123;&#39;a&#39;, &#39;c&#39;&#125;
+
+print(a ^ b)                              # 不同时包含于a和b的元素
+#输出
+&#123;&#39;l&#39;, &#39;b&#39;, &#39;z&#39;, &#39;r&#39;, &#39;m&#39;, &#39;d&#39;&#125;
+</code></pre><p><strong>[ 添加元素 ]</strong></p><ul><li><strong>s.add( x )</strong> 将元素 x 添加到集合 s 中，如果元素已存在，则不进行任何操作</li></ul><pre><code class="python">thisset = set((&quot;Google&quot;, &quot;Runoob&quot;, &quot;Taobao&quot;))
+thisset.add(&quot;Facebook&quot;)
+print(thisset)
+#输出
+&#123;&#39;Taobao&#39;, &#39;Facebook&#39;, &#39;Google&#39;, &#39;Runoob&#39;&#125;
+</code></pre><ul><li><strong>s.update( x )</strong> 参数可以是列表，元组，字典等</li></ul><pre><code class="python">thisset = set((&quot;Google&quot;, &quot;Runoob&quot;, &quot;Taobao&quot;))
+thisset.update(&#123;1,3&#125;)
+print(thisset)
+#输出
+&#123;1, 3, &#39;Google&#39;, &#39;Taobao&#39;, &#39;Runoob&#39;&#125;
+
+thisset.update([1,4],[5,6])  
+print(thisset)
+#输出
+&#123;1, 3, 4, 5, 6, &#39;Google&#39;, &#39;Taobao&#39;, &#39;Runoob&#39;&#125;
+</code></pre><p><strong>[ 移除元素 ]</strong></p><pre><code class="python">s.remove( x )        # 将元素 x 从集合 s 中移除，如果元素不存在，则会发生错误
+
+s.discard( x )        # 移除集合中的元素，如果元素不存在，不会发生错误
+
+s.pop()                # 随机删除集合中的一个元素，在交互模式，pop 是删除集合的第一个元素（排序后的集合的第一个元素）
+</code></pre><p><strong>[ 集合函数 ]</strong></p><pre><code class="python">add()            #为集合添加元素
+clear()            #移除集合中的所有元素
+copy()            #拷贝一个集合
+union()            #返回两个集合的并集
+update()        #给集合添加元素
+</code></pre><h2 id="Python-输入输出"><a href="#Python-输入输出" class="headerlink" title="Python 输入输出"></a>Python 输入输出</h2><h3 id="标准输入输出函数"><a href="#标准输入输出函数" class="headerlink" title="标准输入输出函数"></a>标准输入输出函数</h3><ul><li><strong>print()</strong> 标准输出函数</li></ul><pre><code class="python">#  换行符  \n,  end=&#39;\n&#39;
+print(&#39;aaa&#39; end=&#39;&#39;) # 不换行
+print(&#39;bbb&#39; end=&#39;#&#39;) # bbb 和 ccc 之间用 # 连接
+print(&#39;ccc&#39;)
+
+# 格式化输出
+name = &#39;鲁班&#39;
+age = 20
+
+&gt; %s ==&gt; string
+&gt; %d ==&gt; digit(数字)
+&gt; %f ==&gt; float
+&gt; %% ==&gt; 输出 %
+
+print(&#39;他的名字是&#39; + name +&#39;,他的年龄是&#39; + age + &#39;。&#39;) # 输出格式
+print(&#39;他的名字是%s,他的年龄是%d。&#39; %(name, age))
+
+print(&#39;胜率%d%%&#39; % 87)  # %% 表示 %  ==&gt; 87%
+</code></pre><ul><li><strong>input()</strong> 标准输入函数,输入的内容是字符串</li></ul><pre><code class="python">print(&#39;请输入你的姓名：&#39;)
+input()
+&lt;==&gt; input(&#39;请输入你的姓名：&#39;)
+
+# 保存输入的数据
+
+input_content = input(&#39;请输入你的姓名：&#39;)
+print( input_content)
+# 动态
+print(&#39;欢迎您 %s !&#39; % input_content)
+</code></pre><h2 id="Python-分支语句"><a href="#Python-分支语句" class="headerlink" title="Python 分支语句"></a>Python 分支语句</h2><h3 id="if-分支语句"><a href="#if-分支语句" class="headerlink" title="if 分支语句"></a>if 分支语句</h3><ul><li>比较运算符</li></ul><pre><code>==  相等, !=  不相等, &gt;   大于, &lt;   小于, &gt;=  大于等于, &lt;=  小于等于
+</code></pre><ul><li>if 语句</li></ul><pre><code class="python">if a &gt; b  :
+    ret = a -b
+    else:
+        ret = a + b
+        print(ret)
+</code></pre><ul><li>多个条件之间的关系</li></ul><pre><code class="python"># and(且)  ==&gt; 非 0 为真， 0 为假
+ret = 0 and 2 # ==&gt; 第一个条件为假，没有必要检查第二个条件 故 输出第一个条件 0
+ret = 1 and 0 # ==&gt; 第一个条件为真，第二个条件必须执行   输出第二个条件 0
+ret = 1 and 2 # ==&gt; 第一个条件为真，第二个条件必须执行   输出第二个条件 2
+
+# or(或)   ==&gt; 一个为真则为真
+ret = 1 or 2  # 检查第一个条件，为真， 输出第一个条件 0
+ret = 0 or 1  # 第一个条件为假，第二个条件必须执行   输出第二个条件 1
+ret = 0 or 0  # 第一个条件为假，第二个条件必须执行   输出第二个条件 0
+
+# 例  and 优先级 高于 or
+a = 10
+b = 20
+ret = a &gt; b and a or b
+= false and a or b
+= false or b
+= b                 # ==&gt; b 20
+ret = a &lt; b and a or b
+= true and a or b
+= a or b
+= a                 # ==&gt; a 10
+# not(非)
+</code></pre><h3 id="while-语句"><a href="#while-语句" class="headerlink" title="while 语句"></a>while 语句</h3><pre><code class="python">&quot;&quot;&quot;
+    我不喜欢这个世界，我只喜欢你！
+    &quot;&quot;&quot;
+# while 循环
+
+# i = 1
+# while i &lt;= 100:
+#     print(i)
+#     i += 1
+#
+# print(&#39;END&#39;)
+
+# 1-100 偶数
+
+# i = 1
+# while i &lt;= 100:
+#     # print(i)
+#     # i += 2
+#     if i % 2 == 0:
+#         print(i)
+#     i += 1
+
+# 1-100 累加和
+
+# start = 1
+# end = 100
+# total = 0
+# while start &lt;= end:
+#     total = total + start
+#     start += 1
+# print(total)
+
+# start = int(input(&#39;开始数：&#39;))
+# end = int(input(&#39;结束数：&#39;))
+# total = 0
+# while start &lt;= end:
+#     total = total + start
+#     start += 1
+# print(total)
+
+# 1-100 奇数和
+
+# start = 1
+# total = 0
+# while start &lt;= 100:
+#     if start % 2 != 0:
+#         total = total + start
+#     start += 1
+# print(&#39;奇数和：&#39;,total)
+
+# 打印 *
+
+# n = 1
+# while n &lt;= 5:
+#     print(&#39;*&#39; * n)
+#     n += 1
+
+# 1- 100 除 50 不累加
+
+# index = 1
+# total = 0
+# while index &lt;= 100:
+#     if index != 50:
+#         total = total + index
+#     index += 1
+# print(total)
+# index = 1
+# total = 0
+# while index &lt;= 100:
+#     if index == 50:
+#         index += 1
+#         continue  # 跳过本次循环 不是退出循环
+#     total = total + index
+#     index += 1
+# print(total)
+
+# 大于 50 停止循环
+
+# i = 1
+# while i &lt;= 100:
+#     if i &gt; 50:
+#         break  # 后边的代码不执行，并且终止循环
+#     i += 1
+# print(i)
+
+# 简易版员工管理系统
+# 1 展示信息
+# 2 新增信息
+# 3 修改信息
+# 4 删除信息
+# 5 退出
+
+while True:
+    print(&#39;欢迎使用&#39;)
+    print(&#39;*&#39; * 10 + &#39;操作菜单&#39; + &#39;*&#39; * 10)
+
+    print(&#39;1. 展示信息&#39;)
+    print(&#39;2. 新增信息&#39;)
+    print(&#39;3. 修改信息&#39;)
+    print(&#39;4. 删除信息&#39;)
+    print(&#39;5. 退出&#39;)
+    # 保存用户操作
+    user_operation = int(input(&#39;请输入您的操作：&#39;))
+    if user_operation == 1:
+        print(&#39;姓名\t年龄\t&#39;)
+        print(&#39;鲁班\t20\t&#39;)
+        print(&#39;吕布\t30\t&#39;)
+        print(&#39;小乔\t18\t&#39;)
+        elif user_operation == 2:
+            name = input(&#39;请输入姓名：&#39;)
+            age = input(&#39;请输入年龄：&#39;)
+            print(&#39;%s 添加成功&#39;% name)
+            elif user_operation == 3:
+                name = input(&#39;请输入修改姓名&#39;)
+                print(&#39;%s 修改成功&#39;% name)
+
+
+                elif user_operation == 4:
+                    name = input(&#39;请输入修改姓名&#39;)
+                    print(&#39;%s 删除成功&#39;% name)
+                    elif user_operation == 4:
+                        print(&#39;退出成功&#39;)
+                        break
+                        else:
+                            print(&#39;输入有误&#39;)
+
+                            print(&#39;*&#39; * 27)
+</code></pre><h2 id="Python-函数操作"><a href="#Python-函数操作" class="headerlink" title="Python 函数操作"></a>Python 函数操作</h2><pre><code class="python"># 定义函数：
+def 函数名():
+    一行或多行代码
+
+# def sum(a, b):
+#     ret = a + b
+#     return ret
+# result =  sum(10, 20)
+# result = result + 100
+# print(result)
+
+# 两个数之间的所有数之和
+
+start = int(input(&#39;输入开始数字：&#39;))
+end = int(input(&#39;输入结束数字：&#39;))
+def sum(start, end):
+    &quot;&quot;&quot;这是我的函数文档&quot;&quot;&quot;
+    if not isinstance(start, int):
+        print(&#39;请输入整数&#39;)
+        return None
+    if not isinstance(end, int):
+        print(&#39;请输入整数&#39;)
+        return None
+    if start &gt; end:
+        print(&#39;start 必须小于 end&#39;)
+        return None
+    total = 0
+    whi le start &lt;= end:
+        total = total + start
+        start += 1
+        print(total)
+
+        sum(start, end)
+
+        # 输入运算符进行计算
+
+        while True:
+            Operator = input(&#39;请输入运算符&#39;)
+
+            def Operation(left, right, Oper):
+                a = left
+                b = right
+                if Oper == &#39;+&#39;:
+                    result = a + b
+                    elif Oper == &#39;-&#39;:
+                        result = a - b
+                        elif Oper == &#39;*&#39;:
+                            result = a * b
+                            elif Oper == &#39;/&#39;:
+                                result = a / b
+                                else:
+                                    print(&#39;输入有误&#39;)
+                                    result = None
+                                    return result
+
+                                result = Operation(10, 20, Operator)
+                                print(result)
+</code></pre><h2 id="数据类型基础操作"><a href="#数据类型基础操作" class="headerlink" title="数据类型基础操作"></a>数据类型基础操作</h2><h3 id="字符串（String）-1"><a href="#字符串（String）-1" class="headerlink" title="字符串（String）"></a>字符串（String）</h3><blockquote><p>维度：方法的作用，参数，返回值，原数据是否改变</p></blockquote><h5 id="符串的遍历"><a href="#符串的遍历" class="headerlink" title="符串的遍历"></a>符串的遍历</h5><pre><code class="python">istr = &#39;hello&#39;
+# 方法一
+i = 0
+while i &lt; 5:
+    print(istr[i])
+    i += 1
+    # 方法二
+    for v in istr:
+        print(v, end=&#39; &#39;)
+</code></pre><h5 id="字符串的替换"><a href="#字符串的替换" class="headerlink" title="字符串的替换"></a>字符串的替换</h5><ul><li><strong>replace()</strong> [ str.replace(‘old’, ‘new’, 替换次数) ]</li></ul><pre><code class="python">strEmail = &#39;zxymaibox@yeah.net&#39;
+
+newstr = strEmail.replace(&#39;y&#39;,&#39;#&#39;) # 将所有的 y 替换成 ‘#’
+newstr = strEmail.replace(&#39;y&#39;,&#39;#&#39;, 1) # 只替换第一次出现的 y
+</code></pre><h5 id="字符串查找"><a href="#字符串查找" class="headerlink" title="字符串查找"></a>字符串查找</h5><ul><li><strong>find()</strong></li><li>返回第一次出现的位置，如果没有则返回 -1</li></ul><pre><code class="python">strEmail = &#39;zxymaibox@yeah.net&#39;
+
+# 找到 @ 的位置
+
+strEmail.find(&#39;@&#39;)
+</code></pre><h5 id="字符串的切片"><a href="#字符串的切片" class="headerlink" title="字符串的切片"></a>字符串的切片</h5><pre><code class="python"># 以 @ 获取前后内容
+
+strEmail = &#39;zxymaibox@yeah.net&#39;
+possion = strEmail.find(&#39;@&#39;)  # 10
+
+# *****************
+
+strEmail[起始 : 结束 : 步长]
+
+# 起始值不写表示从 0 开始
+print(strEmail[: 9])
+
+# 结束值不写表示到最后
+print(strEmail[10:])
+
+# 步长(第三个值表示步长)
+print(strEmail[0: 9: 1])  &lt;==&gt; print(strEmail[0 : 9]) # zxymaibox
+print(strEmail[0: 9: 2])  # zyabx
+print(strEmail[0: 9: 3])  # zmb
+
+# 起始 : 结束 : 步长 可以是负值
+print(strEmail[9: 1: -1]  # xobiamyxz
+
+      # 字符串的逆序
+      print(strEmail[:: -1])
+
+      # *****************
+
+      # 切片语法左闭右开
+
+      方法一：
+
+      username =&gt; print(strEmail[0: 9])
+      # 获取字符串长度
+      length = len(strEmail)
+
+      houzhui =&gt; print(strEmail[10: length])
+
+      方法二：
+
+      username = strEmail[:possion]
+      houzhui = strEmail[possion + 1:]
+      print(username, houzhui)
+</code></pre><h5 id="字符串拆分成列表"><a href="#字符串拆分成列表" class="headerlink" title="字符串拆分成列表"></a>字符串拆分成列表</h5><ul><li><strong>split()</strong></li><li>返回拆分后的列表</li></ul><pre><code class="python"># 以 @ 获取前后内容
+strEmail = &#39;zxymaibox@yeah.net&#39;
+
+# 查询某一字符出现的次数
+strCount = strEmail.count(&#39;@&#39;)
+
+if strCount == 1:
+    result = strEmail.split(&#39;@&#39;)
+
+    print(result)  # =&gt; [&#39;zxymaibox&#39;, &#39;yeah.net&#39;]
+
+    username = result[0]
+    houzhui = result[1]
+</code></pre><h5 id="查询某一字符出现的次数"><a href="#查询某一字符出现的次数" class="headerlink" title="查询某一字符出现的次数"></a>查询某一字符出现的次数</h5><ul><li><strong>count()</strong></li></ul><pre><code class="python">strEmail = &#39;zxymaibox@yeah.net&#39;
+
+print(strEmail.count(&#39;@&#39;)) # =&gt; 1
+print(strEmail.count(&#39;y&#39;)) # =&gt; 2
+</code></pre><h5 id="判断字符串是否全为字母"><a href="#判断字符串是否全为字母" class="headerlink" title="判断字符串是否全为字母"></a>判断字符串是否全为字母</h5><ul><li><strong>isalpha()</strong> [str.isalpha()]</li><li>返回布尔值</li></ul><h5 id="字符串去除两侧空格"><a href="#字符串去除两侧空格" class="headerlink" title="字符串去除两侧空格"></a>字符串去除两侧空格</h5><ul><li><strong>strip()</strong></li><li>返回新的字符串</li></ul><h3 id="列表（List）-1"><a href="#列表（List）-1" class="headerlink" title="列表（List）"></a>列表（List）</h3><pre><code class="python">list = [10, 20, 30, 40]
+# 列表支持切片语法,可以切成小列表
+list[:: -1]
+</code></pre><h5 id="列表的遍历"><a href="#列表的遍历" class="headerlink" title="列表的遍历"></a>列表的遍历</h5><pre><code class="python">list = [10, 20, 30, 40]
+# 方法一
+index = 0
+length = len(list)
+while index &lt; length:
+    print(list[index])
+    index += 1
+    # 方法二
+    for val in list:
+        print(val)
+</code></pre><h5 id="列表元素插入"><a href="#列表元素插入" class="headerlink" title="列表元素插入"></a>列表元素插入</h5><pre><code class="python">list = [10, 20, 30, 40]
+# 尾部插入
+list.append(30)
+# 指定位置插入
+list.insert(0, 200)
+</code></pre><h5 id="列表元素删除"><a href="#列表元素删除" class="headerlink" title="列表元素删除"></a>列表元素删除</h5><ul><li><strong>pop()</strong> 位置删除，[ 无参数的时候，默认删除最后一个位置的元素 ]</li><li><strong>remove()</strong> 值删除， [ 默认删除第一次出现的值 ]</li><li>**clear() **清空列表，</li></ul><pre><code class="python">list = [10, 20, 30, 40, 20]
+# 位置删除 pop
+list.pop()
+list.pop(2)
+#  值删除
+list.remove(20)
+# 列表清空
+list.clear()
+</code></pre><h5 id="列表元素查找和修改"><a href="#列表元素查找和修改" class="headerlink" title="列表元素查找和修改"></a>列表元素查找和修改</h5><ul><li><strong>index(oldValue)</strong> [ 如果值存在返回位置，不存在会报错 ]</li><li><strong>count(oldValue)</strong> [ 查找出现的次数，如果不为 0 ，再使用 index 方法 ]</li></ul><pre><code class="python">list = [10, 20, 30, 40]
+# if list.count(20) != 0:
+#     indexC = list.index(20)
+#     # 修改值
+#     list[indexC] = 20
+
+或
+#  in 和 not in 判断值是否存在
+
+if 20 in list:
+    indexC = list.index(20)
+    # 修改值
+    list[indexC] = 20
+</code></pre><h5 id="列表元素排序"><a href="#列表元素排序" class="headerlink" title="列表元素排序"></a>列表元素排序</h5><ul><li><strong>sort()</strong> [默认从小到大, reverse= false ]</li><li>参数： reverse=True 实现降序排列；</li><li>逆序： reverse() [ 实现列表的逆序 ]</li></ul><pre><code class="python"># 创建一个包含 10 个随机数的列表
+import random
+list = []
+i = 0
+while i &lt; 10:
+    randomNum =  random.randint(1, 100) # 1-100 的随机数
+    list.append(randomNum)
+    i += 1
+    print(list)
+    list.sort()
+</code></pre><h5 id="两个列表元素追加"><a href="#两个列表元素追加" class="headerlink" title="两个列表元素追加"></a>两个列表元素追加</h5><ul><li><strong>extend()</strong></li></ul><pre><code class="python">list1 = [1,2,3,4]
+list2 = [10,20,30,40]
+
+list1.extend(list2)
+print(list1)  # [1,2,3,4,10,20,30,40]
+</code></pre><h3 id="元祖（Tuple）"><a href="#元祖（Tuple）" class="headerlink" title="元祖（Tuple）"></a>元祖（Tuple）</h3><p><strong>可以理解为列表，但是他的元素不可修改</strong></p><ul><li>元组一旦创建不可修改</li><li>元组只有一个元素时，需要在尾部添加一个逗号</li><li>元组比列表更节省空间</li><li>元组是序列式容器支持索引、切片操作</li></ul><pre><code class="python"># 定义元组
+tuple = (10,20,30,40)
+
+# 只支持不能修改元素的方法
+# 查询元素
+- index
+- count
+# 遍历操作
+- while
+- for
+</code></pre><h3 id="字典（Dictionary）-1"><a href="#字典（Dictionary）-1" class="headerlink" title="字典（Dictionary）"></a>字典（Dictionary）</h3><pre><code class="python"># 字典的定义，键是唯一的，值可以重复，不支持索引和切片
+dict = &#123;
+    &#39;name&#39;: &#39;serendipity&#39;,
+    &#39;gender&#39;: &#39;女&#39;
+    &#39;age&#39; : &#39;20&#39;,
+&#125;
+</code></pre><h5 id="字典元素访问"><a href="#字典元素访问" class="headerlink" title="字典元素访问"></a>字典元素访问</h5><pre><code class="python">dict = &#123;
+    &#39;name&#39;: &#39;serendipity&#39;,
+    &#39;gender&#39;: &#39;女&#39;
+    &#39;age&#39; : &#39;20&#39;,
+&#125;
+
+## 获取值
+1. print(dict[&#39;age&#39;])   # 20 , 不存在会报错
+2. 使用 get 方法
+print(dict.get(&#39;age&#39;, &#39;我是默认返回值&#39;))  # 20 , 不存在返回 None , 可以指定默认返回值
+
+## 添加和修改元素（如果 key 存在就是修改元素，不存在则添加元素）
+dict[&#39;score&#39;] = 99       # 添加元素
+dict[&#39;name&#39;] = &#39;时光静好&#39; # 修改元素
+</code></pre><h5 id="字典元素删除"><a href="#字典元素删除" class="headerlink" title="字典元素删除"></a>字典元素删除</h5><pre><code class="python">person = &#123;
+    &#39;name&#39;: &#39;serendipity&#39;,
+    &#39;gender&#39;: &#39;女&#39;
+    &#39;age&#39; : &#39;20&#39;,
+&#125;
+
+## 删除元素(也适用于列表)
+del  person[&#39;age&#39;]
+
+## 清空字典
+person.clear()
+
+## 删除整个字典
+del person
+</code></pre><h5 id="字典的遍历"><a href="#字典的遍历" class="headerlink" title="字典的遍历"></a>字典的遍历</h5><pre><code class="python">person = &#123;
+    &#39;name&#39;: &#39;serendipity&#39;,
+    &#39;gender&#39;: &#39;女&#39;
+    &#39;age&#39; : &#39;20&#39;,
+&#125;
+
+for val in person:
+    print(val)   # name,gender,age 默认只能遍历键
+
+    # ***********************
+
+    # 遍历字典的键
+    personKeyList = person.keys()
+    print(personKeyList)  # dict_keys 类型： dict_keys([&#39;name&#39;, &#39;gender&#39;, &#39;age&#39;])
+
+    # 把 dict_keys 类型 转换 成列表类型
+    print(list(personKeyList))  # [&#39;name&#39;, &#39;gender&#39;, &#39;age&#39;]
+
+
+    # 遍历字典的值
+    personValList = person.values()
+    print(personValList)  # dict_values 类型： dict_values([&#39;serendipity&#39;, &#39;女&#39;, &#39;20&#39;])
+
+    # 把 dict_values 类型 转换 成列表类型
+    print(list(personValList))  # [&#39;serendipity&#39;, &#39;女&#39;, &#39;20&#39;]
+
+
+    # 键值对遍历
+    personKeyValList = person.items()
+    print(personKeyValList)  # dict_items 类型： dict_items([(&#39;name&#39;: &#39;serendipity&#39;),(&#39;gender&#39;: &#39;女&#39;), (&#39;age&#39; : &#39;20&#39;)])
+
+    # 把 dict_items 类型 转换 成列表类型
+    print(list(personKeyValList))  # [(&#39;name&#39;: &#39;serendipity&#39;),(&#39;gender&#39;: &#39;女&#39;), (&#39;age&#39; : &#39;20&#39;)]
+
+
+    keyValList = list(person.items())
+
+    for value in keyValList:
+        print(value)
+        print(&#39;key:&#39;, value[0],&#39;value:&#39;, value[1])
+
+
+        i = 0
+        while i &lt; len(keyValList):
+            print(&#39;key:&#39;, keyValList[i][0], &#39;value:&#39;, keyValList[i][1] )
+            i += 1
+</code></pre><h3 id="集合（Set）-1"><a href="#集合（Set）-1" class="headerlink" title="集合（Set）"></a>集合（Set）</h3><h2 id="Python-文件操作"><a href="#Python-文件操作" class="headerlink" title="Python 文件操作"></a>Python 文件操作</h2><h3 id="文件的打开和关闭"><a href="#文件的打开和关闭" class="headerlink" title="文件的打开和关闭"></a>文件的打开和关闭</h3><ul><li><strong>open(文件名, 访问模式)</strong> 打开文件 [ 参数： 文件名 ， 访问模式]<ul><li>访问模式： r 以只读方式打开文件（默认）</li><li>访问模式： w 打开文件只用于写入</li><li>访问模式： a 打开文件用于追加，文件存在，新的内容写入已有内容之后，文件不存在，创建新文件进行写入</li><li>访问模式： rb 以二进制格式打开文件用于只读，文件指针放在开头</li><li>访问模式： wb 以二进制格式打开文件用于写入，文件存在，将其覆盖，文件不存在，创建新文件进行写入</li><li>访问模式： wb 以二进制格式打开文件用于追加，文件存在，新的内容写入已有内容之后，文件不存在，创建新文件进行写入</li></ul></li><li><strong>close()</strong> 关闭文件</li></ul><p>** pyCharm 文件编码: file encodings: GBK **</p><pre><code class="python">#  写入文件
+fileA= open(&#39;test.md&#39;, &#39;w&#39;) # 参数 文件名， 访问模式
+
+content= &quot;1. 时光静好，岁月安然 \n 一人之间，山水江湖&quot;
+fileA.write(content)
+
+# 关闭文件
+fileA.close()
+
+# 读取文件
+fileB= open(&#39;test.md&#39;, &#39;r&#39;)
+
+content = fileB.read()
+print(content)
+
+fileB.close()
+</code></pre><h3 id="文件读写"><a href="#文件读写" class="headerlink" title="文件读写"></a>文件读写</h3><ul><li><strong>write()</strong>         一次只可以写一行</li><li><strong>writelines()</strong>  一次写入多行，以列表形式</li><li><strong>read()</strong>         没有参数读取文件所有数据，指定参数（1,2,3… …）读取指定个数的数据</li><li><strong>readline()</strong>    一次读取一行</li><li><strong>readlines()</strong>   一次读取多行</li></ul><pre><code class="python">#  写入文件
+fileA= open(&#39;test.md&#39;, &#39;w&#39;) # 参数 文件名， 访问模式
+
+content= &quot;1. 时光静好，岁月安然 \n 一人之间，山水江湖!&quot;
+fileA.write(content)
+
+lines = [&#39;时光静好，岁月安然.\n&#39;, &#39;一人之间，山水江湖!\n&#39;]
+fileA.writelines(lines)
+
+# 关闭文件
+fileA.close()
+
+## 读取文件
+
+fileB= open(&#39;test.md&#39;, &#39;r&#39;)
+
+&quot;&quot;&quot;文件内容:
+
+    时光静好，岁月安然.
+    一人之间，山水江湖!
+    &quot;&quot;&quot;
+
+content = fileB.read()
+content1 = fileB.readline()
+content2 = fileB.readline()
+
+content4 = fileB.readlines()
+
+print(content)  # 读取所有内容
+print(content1) # 时光静好，岁月安然.
+print(content2) # 一人之间，山水江湖!(因为第一行content1 已经读过，所以读取下一行内容)
+
+print(content4) # [&#39;时光静好，岁月安然.\n&#39;, &#39;一人之间，山水江湖!\n&#39;]
+
+# 按行读取
+for line in content4:
+    if line[-1] == &#39;\n&#39;:
+        print(line[:-1])
+        else: 
+            print(line)
+
+            fileB.close()
+</code></pre><h3 id="文件拷贝"><a href="#文件拷贝" class="headerlink" title="文件拷贝"></a>文件拷贝</h3><pre><code class="python"># 获取要拷贝的文件名
+
+old_fileName = input(&#39;请输入您要拷贝的文件名：&#39;)
+
+# 读取拷贝文件内容
+
+new_fileName = old_fileName + &#39;bk&#39;
+
+# 打开新的文件
+
+file_old = open(old_fileName, &#39;rb&#39;)
+file_new = open(new_fileName, &#39;wb&#39;) 
+
+# 将老文件内容写入新文件
+
+old_fileContent = file_old.read()
+file_new.write(old_fileContent)
+
+# 关闭文件
+
+file_old.close()
+file_new.close()
+</code></pre><h3 id="文件和目录操作"><a href="#文件和目录操作" class="headerlink" title="文件和目录操作"></a>文件和目录操作</h3><pre><code class="python">import os
+
+# 文件重命名
+os.rename(&#39;test.md&#39;, &#39;hello.txt&#39;)
+
+# 文件删除
+os.remove(&#39;test.md&#39;) # 路径问题：写绝对路径
+
+# 创建和删除目录
+os.mkdir(&#39;abc&#39;)
+os.rmdir(&#39;abc&#39;)
+
+# 获取目录的文件列表
+os.listdir(&#39;abc&#39;)
+
+# 获取和设置工作目录
+os.getCWD()  # CWD 默认当前文件路径
+os.chdir(&#39;\Users\YII\Desktop\\&#39;) # 设置默认工作目录
+</code></pre><hr></div><br><div><div id="post-tag"><span><i class="iconfont icon-inbox"></i> <a class="hover-with-bg" href="/categories/%E5%90%8E%E7%AB%AF%E9%A2%86%E5%9F%9F">后端领域</a> &nbsp; <a class="hover-with-bg" href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80">编程语言</a> &nbsp; <a class="hover-with-bg" href="/categories/python">python</a> &nbsp; </span><span><i class="iconfont icon-tag"></i> <a class="hover-with-bg" href="/tags/python">python</a></span></div><div id="post-note"><div><strong>本文作者：</strong><a href="/">张小剩</a></div><div><strong>本文链接：</strong><a href="https://alwayscn.github.io/alwaysblog/post/2562162005/">https://alwayscn.github.io/alwaysblog/post/2562162005/</a></div><div><strong>版权声明：</strong>本站文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/3.0/deed.zh" rel="nofollow noopener noopener">CC BY-NC-SA 3.0 CN</a> 协议进行许可</div></div><div id="post-nav" class="container"><div class="row"><a href="/post/3308975195/" id="post-nav-prev" class="col"><i class="fas fa-arrow-left"></i> <span class="post-nav-title">python 零基础</span> </a><a href="/post/519960898/" id="post-nav-next" class="col"><span class="post-nav-title">Locust 性能测试</span> <i class="fas fa-arrow-right"></i></a></div></div></div></div><div class="col-lg-7 mx-auto nopadding-md"><div class="container custom post-content mx-auto"><img src="https://octodex.github.com/images/jetpacktocat.png" srcset="undefined" class="rounded mx-auto d-block mt-5" style="width:150px;height:150px"></div></div><div class="col-lg-10 mx-auto nopadding-md"><div class="comments mx-auto" id="comments"><br><br><style type="text/css">.v[data-class=v] .vcontent>p>a:not(.at){overflow-wrap:anywhere;display:inline}</style><div id="vcomments" style="margin:0 auto"></div><script defer src="//unpkg.zhimg.com/@waline/client@latest/dist/Waline.min.js"></script><script>var notify=!1,verify=!1,oldLoad=window.onload;window.onload=function(){Waline({el:"#vcomments",serverURL:"https://blog-waline-m0eiqctad-alwayscn.vercel.app/",avatar:"mp",avatarCDN:"https://gravatar.loli.net/avatar/",meta:["nick","mail","link"],pageSize:"10",emoji:["https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/alus","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/weibo","https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/tieba"],locale:{placeholder:"说点什么吧quq",uploading:"上传中...默认图床在境内可能无法访问"},uploadImage:!1}),oldLoad&&oldLoad()}</script><noscript>Please enable JavaScript to view the <a target="_blank" href="https://waline.js.org" rel="nofollow noopener noopener">comments powered by Waline.</a></noscript></div></div></div></div><div id="toc-container" class="d-none d-lg-block col-lg-2"><div id="toc"><p class="h4"><i class="far fa-list-alt"></i>&nbsp;目录</p><div id="tocbot"></div><div class="catalog-close" onclick="close_show(0)">关闭</div><div id="post-catalog-bar" onclick="close_show(1)" class="post-catalog-bar-left-minborder" style="left:144px"><i class="far fa-book-open" style="font-size:10px"></i> 目 录</div></div></div></div></div></main><div id="sidebar" class="sidebar-hide"><span class="sidebar-button sidebar-button-shift" id="toggle-sidebar"><i class="fa fa-arrow-right on" aria-hidden="true"></i></span><div class="sidebar-overlay"></div><div class="sidebar-intrude"><div class="sidebar-avatar"><img src="/static/images/avatar.jpg" srcset="/static/images/avatar.jpg" alt="avatar"></div><div class="text-center sidebar-about"><p class="h3 sidebar-author">张小剩</p><p class="sidebar-subtitle">One two one ...<script type="text/javascript">console.log("博主认证: https://bbs.liyuans.com")</script></p><a href="https://github.com/alwayscn" class="h4" target="_blank"><i class="fab fa-github" aria-hidden="true"></i> </a>&nbsp;&nbsp; <a href="https://www.yuque.com/extime/blog" class="h4" target="_blank"><i class="fab fa-crow" aria-hidden="true"></i> </a>&nbsp;&nbsp; <a href="https://www.cnblogs.com/wehome" class="h4" target="_blank"><i class="fab fa-blog" aria-hidden="true"></i> </a>&nbsp;&nbsp; <a href="mailto:zhangxy.cn@gmail.com" class="h4" target="_blank"><i class="fas fa-envelope" aria-hidden="true"></i> </a>&nbsp;&nbsp;</div><div class="sidebar-friend"><ul class="list-group"><a href="https://console.leancloud.app/" target="_blank"><li class="list-group-item"><i class="fas fa-quote-left"></i>&nbsp; LeanCloud</li></a><a href="https://vercel.com/" target="_blank"><li class="list-group-item"><i class="fas fa-quote-left"></i>&nbsp; Vercel</li></a><a href="https://hitokoto.cn/" target="_blank"><li class="list-group-item"><i class="fas fa-quote-left"></i>&nbsp; 一言</li></a><a href="https://zty.pe/" target="_blank"><li class="list-group-item"><i class="fas fa-quote-left"></i>&nbsp; 打字游戏</li></a><a href="https://flipanim.com/" target="_blank"><li class="list-group-item"><i class="fas fa-quote-left"></i>&nbsp; 在线涂鸦</li></a><a href="http://gogoame.sumbioun.com/" target="_blank"><li class="list-group-item"><i class="fas fa-quote-left"></i>&nbsp; Gogoame (午後雨)</li></a><a href="https://hin.cool/c/dd.html" target="_blank"><li class="list-group-item"><i class="fas fa-quote-left"></i>&nbsp; 减压滑碟</li></a><a href="https://www.jq22.com/yanshi4710" target="_blank"><li class="list-group-item"><i class="fas fa-quote-left"></i>&nbsp; 元素周期</li></a></ul></div></div></div><a class="z-depth-1" id="scroll-top-button" href="#" role="button"><i class="fa fa-chevron-up scroll-top-arrow" aria-hidden="true"></i></a><div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable modal-lg" role="document"><div class="modal-content"><div class="modal-header text-center"><h4 class="modal-title w-100 font-weight-bold">搜索</h4><button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body mx-3"><div class="md-form mb-5"><input type="text" id="local-search-input" class="form-control validate"> <label data-error="x" data-success="v" for="local-search-input">关键词</label></div><div class="list-group" id="local-search-result"></div></div></div></div></div><div id="footerContent" class="rgba-black-slight"><footer><div class="footer-plane"><div class="footer-container"><div class="footer-left"><div><div class="footer-info">Copyright © 2022&nbsp;张小剩的博客.Powered by <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener noreferrer">Fluid</a></div></div></div><div class="footer-details footer-right"><div><div class="footer-aside-box"><i class="fa fa-cog fa-spin"></i> <span id="span">本站已稳定运行: 128天11小时56分5秒</span><script type="text/javascript">function runtime(){console.log("12/12/2021 07:21:00"),X=new Date("12/12/2021 07:21:00"),Y=new Date,T=Y.getTime()-X.getTime(),M=864e5,a=T/M,A=Math.floor(a),b=24*(a-A),B=Math.floor(b),c=60*(b-B),C=Math.floor(60*(b-B)),D=Math.floor(60*(c-C)),span.innerHTML="本站已稳定运行: "+A+" 天"+B+" 小时"+C+" 分"+D+" 秒"}setInterval(runtime,1e3)</script></div></div></div></div><div class="footer-hitokoto"><a id="hitokotoa" href="#" target="_blank" rel="nofollow noopener noreferrer"><span id="hitokoto"></span></a></div></div></footer></div><script src="/lib/popper/popper.min.js"></script><script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script><script src="https://cdn.staticfile.org/mdbootstrap/4.8.7/js/mdb.min.js"></script><script src="/js/main.js"></script><script src="/js/lazyload.js"></script><script src="https://cdn.staticfile.org/tocbot/4.8.1/tocbot.min.js"></script><script src="/js/post.js"></script><script src="/lib/prettify/prettify.min.js"></script><script type="text/javascript">$(document).ready((function(){$("pre").addClass("prettyprint  linenums"),prettyPrint()}))</script><script src="https://cdn.staticfile.org/typed.js/2.0.9/typed.min.js"></script><script type="text/javascript">var typed=new Typed("#subtitle",{strings:["  ","python 基础&nbsp;"],cursorChar:"_",typeSpeed:70,loop:!1});typed.stop(),$(document).ready((function(){$(".typed-cursor").addClass("h2"),typed.start()}))</script><script src="https://cdn.staticfile.org/anchor-js/4.2.0/anchor.min.js"></script><script type="text/javascript">anchors.options={placement:"right",visible:"hover"};var el="h1,h2,h3,h4,h5,h6".split(","),res=[];for(item of el)res.push(".markdown-body > "+item);anchors.add(res.join(", "))</script><script src="/js/local-search.js"></script><script type="text/javascript">var path="/local-search.xml",inputArea=document.querySelector("#local-search-input");inputArea.onclick=function(){getSearchFile(path),this.onclick=null}</script><script src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js"></script><script type="text/javascript">var setupFancybox=function(){$("#post img:not(.no-zoom img, img[no-zoom])").each((function(){var t=document.createElement("a");$(t).attr("data-fancybox","gallery"),$(t).attr("href",$(this).attr("src")),$(this).wrap(t)}))};setupFancybox()</script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+          tex2jax: {
+              inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+              processEscapes: true,
+              skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+          }
+      });
+
+      MathJax.Hub.Queue(function() {
+          var all = MathJax.Hub.getAllJax(), i;
+          for(i=0; i < all.length; i += 1) {
+              all[i].SourceElement().parentNode.className += ' has-jax';
+          }
+      });</script><script src="https://cdn.staticfile.org/mathjax/2.7.6/MathJax.js?config=TeX-MML-AM_CHTML"></script><script type="text/javascript">function hitokoto(o){$("#hitokoto").stop().fadeOut((function(){$("#hitokoto").html(o.hitokoto),document.getElementById("hitokotoa").href="https://hitokoto.cn/?uuid="+o.uuid,$("#hitokoto").stop().fadeIn()}))}function getHitokoto(){var o=["a","b","c","d","e","i"];fetch("https://v1.hitokoto.cn/?encode=json&charset=utf-8&c="+o[Math.floor(Math.random()*o.length)],{cache:"no-cache",method:"GET",mode:"cors"}).then(o=>o.json()).then(o=>{hitokoto(o),setTimeout(getHitokoto,1e4)}).catch(console.error)}$(document).ready((function(){getHitokoto()}))</script><script type="text/javascript">$("#background").removeClass("banner-bg"),$("body").addClass("banner-bg");var postToTopHight=$("#board").offset().top;$(window).scroll((function(){document.body.scrollTop+document.documentElement.scrollTop>=postToTopHight?($("#background").removeClass("rgba-black-slight"),$("#mainContent").removeClass("rgba-black-slight"),$("#footerContent").removeClass("rgba-black-slight")):($("#background").addClass("rgba-black-slight"),$("#mainContent").addClass("rgba-black-slight"),$("#footerContent").addClass("rgba-black-slight"))}))</script><script type="text/javascript">var blogRunTime=function(){var e=document.getElementById("runtime"),n=new Date("12/12/2021 07:21:00"),t=(new Date).getTime()-n.getTime(),i=Math.floor(t/864e5);e.innerHTML=i};$(document).ready((function(){blogRunTime()}))</script><script type="text/javascript">var originalTitle=document.title;window.onblur=function(){document.title="你不爱我了QAQ"},window.onfocus=function(){document.title=originalTitle}</script><script type="text/javascript">console.log("雪花效果 code by kvv.me"),function(){function n(){i.width=window.innerWidth,i.height=window.innerHeight,a=Math.round(window.innerWidth*window.innerHeight/1e4)}var i=document.createElement("canvas"),e=requestAnimationFrame||msRequestAnimationFrame||function(n){setTimeout(n,16)},t=0,a=0,o=[];n(),i.className="snow",document.body.appendChild(i);for(var r=0;a>r;r++)o.push({x:Math.random()*window.innerWidth,y:Math.random()*window.innerHeight,radius:4*Math.random()+1,direction:2*Math.random()-.5});addEventListener("resize",n),e((function n(){var r=window.innerWidth,d=window.innerHeight,h=i.getContext("2d");h.clearRect(0,0,r,d),h.fillStyle="rgba(255, 255, 255, 0.7)",h.beginPath(),t+=.01;for(var m=0;a>m;m++){var c=o[m];c&&(h.moveTo(c.x,c.y),h.arc(c.x,c.y,c.radius,0,2*Math.PI,!0),c.y+=Math.cos(t)+c.radius/2,c.x+=Math.sin(t*c.direction),(c.x>r+5||-5>c.x||c.y>d)&&(m%3>0?(o[m].x=Math.random()*r,o[m].y=-10):Math.sin(t*c.direction)>0?(o[m].x=-5,o[m].y=Math.random()*d):(o[m].x=r+5,o[m].y=Math.random()*d)))}h.fill(),e(n)}))}()</script><script type="text/javascript">var jumpComments=function(){if(window.location.hash){var n=decodeURI(window.location.hash);if(!$(n).length)var o=setInterval((function(){$(n).length&&(clearInterval(o),setTimeout((function(){$("html, body").animate({scrollTop:$(n).offset().top-90},1e3)}),1500))}),100)}};$(document).ready((function(){jumpComments()}))</script><style type="text/css">#cnzz_stat_icon_1258664352{display:none}</style><script type="text/javascript">var cnzz_protocol="https:"==document.location.protocol?"https://":"http://";document.write(unescape("%3Cspan id='cnzz_stat_icon_1258664352'%3E%3C/span%3E%3Cscript src='"+cnzz_protocol+"s4.cnzz.com/z_stat.php%3Fid%3D1258664352' type='text/javascript'%3E%3C/script%3E"))</script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-150991779-1"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-150991779-1")</script></body></html>
