@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>语雀文档自动同步 Hexo 博客</title>
+    <link href="/alwaysblog/post/1563831651/"/>
+    <url>/alwaysblog/post/1563831651/</url>
+    
+    <content type="html"><![CDATA[<p>测试：<br>语雀文档自动同步 Hexo 博客</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>杂七杂八</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>语雀</tag>
+      
+      <tag>博客， Serverless</tag>
+      
+      <tag>云函数</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>头脑风暴</title>
     <link href="/alwaysblog/post/2482852438/"/>
     <url>/alwaysblog/post/2482852438/</url>
@@ -199,33 +228,6 @@
   
   
   <entry>
-    <title>MacOS 常见问题总结</title>
-    <link href="/alwaysblog/post/1992094617/"/>
-    <url>/alwaysblog/post/1992094617/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
-    <categories>
-      
-      <category>操作系统</category>
-      
-      <category>MacOS</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>MacOS 问题总结</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>win 常见问题总结</title>
     <link href="/alwaysblog/post/624053898/"/>
     <url>/alwaysblog/post/624053898/</url>
@@ -245,6 +247,33 @@
     <tags>
       
       <tag>windows 问题总结</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>MacOS 常见问题总结</title>
+    <link href="/alwaysblog/post/1992094617/"/>
+    <url>/alwaysblog/post/1992094617/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>操作系统</category>
+      
+      <category>MacOS</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>MacOS 问题总结</tag>
       
     </tags>
     
@@ -713,39 +742,6 @@
   
   
   <entry>
-    <title>CSS 3 多列布局</title>
-    <link href="/alwaysblog/post/2560017432/"/>
-    <url>/alwaysblog/post/2560017432/</url>
-    
-    <content type="html"><![CDATA[<h3 id="CSS-3-多列布局"><a href="#CSS-3-多列布局" class="headerlink" title="CSS 3 多列布局"></a>CSS 3 多列布局</h3><p>[ column 属性 ]</p><p>——column 属性是一个简写属性  包含 column-count 属性 定义列的数量 和 column-width 属性定义列的宽度</p><span id="more"></span><ul><li> column-count 属性 用于设置列的数量或允许的最大列数</li></ul><ul><li>auto: 默认值，用于表示列的数量由其他 CSS 属性绝对决定</li><li>number: 必须是正整数，用于表示定义列的数量</li></ul><ul><li>column-width 属性 用于设置列的宽度或列的最小宽度<ul><li>auto: 默认值，用于表示列的宽度由其他 CSS 属性绝对决定</li><li>length: 必须是正整数，用于表示定义列的宽度</li></ul></li></ul><pre><code class="html">&lt;style&gt;    /*      *       *       *     */    * &#123;       margin: 0;       padding: 0;     &#125;    .parent &#123;        background-color: #eee;        /* column-count: 6; */        /* column-width: 200px; */        /* 简写属性 */        columns: 6 auto;    &#125;    .column1,    .column2,    .column3,    .column5,    .column6 &#123;        height: 300px;    &#125;    .column2 &#123;        background-color: #ff66ff;    &#125;    .column3 &#123;        background-color: #00ffff;    &#125;    .column1 &#123;        background-color: #ffff00;    &#125;    .column5 &#123;        background-color: #ff0000;    &#125;    .column6 &#123;        background-color: #00ff00;    &#125;    &lt;/style&gt;&lt;body&gt;    &lt;div class=&quot;parent&quot;&gt;        &lt;div class=&quot;column1&quot;&gt;&lt;/div&gt;        &lt;div class=&quot;column2&quot;&gt;&lt;/div&gt;        &lt;div class=&quot;column3&quot;&gt;&lt;/div&gt;        &lt;div class=&quot;column6&quot;&gt;&lt;/div&gt;        &lt;div class=&quot;column5&quot;&gt;&lt;/div&gt;        &lt;div class=&quot;column6&quot;&gt;&lt;/div&gt;    &lt;/div&gt;&lt;/body&gt;</code></pre><p>[ 列的间距 ]</p><ul><li><p>column-gap 属性用于设置列于列之间的间距，该属性需要为多列显示时的元素设置</p><ul><li><p>normal:  用于表示使用浏览器定义列的默认间距，默认值 1em</p></li><li><p>length: 必须是正整数，用于表示定义列之间的间距</p><pre><code class="html">&lt;style&gt; .parent &#123;    background-color: #eee;    /* column-count: 6; */    /* column-width: 200px; */    /* 简写属性 */    columns: 5 auto;    column-gap: 20px;&#125;&lt;/style&gt;</code></pre><p>[列的边框 column-rule ]</p></li></ul></li></ul><p>—— column-rule 属性用于定义列于列之间的边框，其中包括边框宽度、边框颜色、边框样式。</p><ul><li>column-rule-width: 列于列之间的边框宽度</li><li>column-rule-color: 列于列之间的边框颜色</li><li>column-rule-style: 列于列之间的边框样式   </li></ul><pre><code class="html">&lt;style&gt;   .parent &#123;       background-color: #eee;       /* column-count: 6; */       /* column-width: 200px; */       /* 简写属性 */       columns: 5 auto;       column-gap: 20px;       /* column-rule-width: 5px;       column-rule-color: #ff0000;       column-rule-style: double; */       /* 简写属性 */       column-rule: 5px #ff0000 double;   &#125;&lt;/style&gt;</code></pre><p> [ 横跨多列 ]</p><ul><li>column-span 属性 用于定义一个列元素是否跨列<ul><li>none：表示元素不跨列</li><li>all: 表示元素跨所有列 </li></ul></li></ul><pre><code class="html">&lt;style&gt;   .column6 &#123;       background-color: #00ff00;       column-span: all;   &#125;&lt;/style&gt;</code></pre><p> [ 列的填充 ]</p><ul><li><p>column-fill 属性用于定义列的高度由内容决定，还是同一高度</p><ul><li><p>auto: 默认值，列的高度由内容绝对</p></li><li><p>balance: 列的高度根据内容最多的一列的高度为准</p><pre><code class="html">&lt;style&gt;.column6,.column7, .column8,.column9 &#123;    /* 浏览器兼容不好 包括chrome浏览器 */    column-fill: balance;&#125;&lt;/style&gt;   &lt;div class=&quot;parent&quot;&gt;        &lt;div class=&quot;column6&quot;&gt;Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum eum dolorum ad quod velit. Corporis inventore alias nostrum dignissimos nihil saepe harum vitae, sint, id voluptate, reprehenderit officiis magnam repellat?&lt;/div&gt;        &lt;div class=&quot;column7&quot;&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur iure dolorum deleniti soluta ipsum at ratione magni recusandae, sapiente necessitatibus, expedita nobis, animi corrupti exercitationem delectus ullam unde sed autem.&lt;/div&gt;        &lt;div class=&quot;column8&quot;&gt;Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius placeat blanditiis harum? Eum, sit corporis illo maxime, nemo excepturi nisi eveniet, error quis ex cum ut nulla sunt aut saepe?            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis debitis officia distinctio cupiditate tempora! Debitis corrupti omnis rerum voluptates laboriosam hic alias repellat nostrum, expedita rem perspiciatis totam maxime labore!        &lt;/div&gt;        &lt;div class=&quot;column9&quot;&gt;Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum, earum. Nobis illo maxime necessitatibus voluptatibus quam nemo blanditiis impedit perferendis, porro delectus eligendi laboriosam voluptate adipisci, culpa vitae accusantium nesciunt.&lt;/div&gt;    &lt;/div&gt;</code></pre></li></ul></li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>前端领域</category>
-      
-      <category>小专栏</category>
-      
-      <category>布局方式</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>css</tag>
-      
-      <tag>css 布局</tag>
-      
-      <tag>web</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>圣杯布局和双飞翼布局</title>
     <link href="/alwaysblog/post/1718216264/"/>
     <url>/alwaysblog/post/1718216264/</url>
@@ -883,6 +879,39 @@
     <url>/alwaysblog/post/3630208258/</url>
     
     <content type="html"><![CDATA[<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><h4 id="居中布局"><a href="#居中布局" class="headerlink" title="居中布局"></a>居中布局</h4><span id="more"></span><ul><li>水平居中布局</li><li>垂直居中布局</li><li>居中布局（ 水平 + 垂直 ）<h4 id="多列布局"><a href="#多列布局" class="headerlink" title="多列布局"></a>多列布局</h4></li><li>两列布局</li><li>三列布局</li><li>CSS 3 多列布局<h4 id="经典布局"><a href="#经典布局" class="headerlink" title="经典布局"></a>经典布局</h4></li><li>圣杯布局</li><li>双飞翼布局<h4 id="全屏布局"><a href="#全屏布局" class="headerlink" title="全屏布局"></a>全屏布局</h4><h4 id="未涉及的布局"><a href="#未涉及的布局" class="headerlink" title="未涉及的布局"></a>未涉及的布局</h4></li><li>网格布局</li><li>弹性盒子布局 CSS3 </li></ul><p>** 没有任何一种布局方式是全优的，在实际应用中根据实际情况选择最合理的布局方式** </p>]]></content>
+    
+    
+    <categories>
+      
+      <category>前端领域</category>
+      
+      <category>小专栏</category>
+      
+      <category>布局方式</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>css</tag>
+      
+      <tag>css 布局</tag>
+      
+      <tag>web</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>CSS 3 多列布局</title>
+    <link href="/alwaysblog/post/2560017432/"/>
+    <url>/alwaysblog/post/2560017432/</url>
+    
+    <content type="html"><![CDATA[<h3 id="CSS-3-多列布局"><a href="#CSS-3-多列布局" class="headerlink" title="CSS 3 多列布局"></a>CSS 3 多列布局</h3><p>[ column 属性 ]</p><p>——column 属性是一个简写属性  包含 column-count 属性 定义列的数量 和 column-width 属性定义列的宽度</p><span id="more"></span><ul><li> column-count 属性 用于设置列的数量或允许的最大列数</li></ul><ul><li>auto: 默认值，用于表示列的数量由其他 CSS 属性绝对决定</li><li>number: 必须是正整数，用于表示定义列的数量</li></ul><ul><li>column-width 属性 用于设置列的宽度或列的最小宽度<ul><li>auto: 默认值，用于表示列的宽度由其他 CSS 属性绝对决定</li><li>length: 必须是正整数，用于表示定义列的宽度</li></ul></li></ul><pre><code class="html">&lt;style&gt;    /*      *       *       *     */    * &#123;       margin: 0;       padding: 0;     &#125;    .parent &#123;        background-color: #eee;        /* column-count: 6; */        /* column-width: 200px; */        /* 简写属性 */        columns: 6 auto;    &#125;    .column1,    .column2,    .column3,    .column5,    .column6 &#123;        height: 300px;    &#125;    .column2 &#123;        background-color: #ff66ff;    &#125;    .column3 &#123;        background-color: #00ffff;    &#125;    .column1 &#123;        background-color: #ffff00;    &#125;    .column5 &#123;        background-color: #ff0000;    &#125;    .column6 &#123;        background-color: #00ff00;    &#125;    &lt;/style&gt;&lt;body&gt;    &lt;div class=&quot;parent&quot;&gt;        &lt;div class=&quot;column1&quot;&gt;&lt;/div&gt;        &lt;div class=&quot;column2&quot;&gt;&lt;/div&gt;        &lt;div class=&quot;column3&quot;&gt;&lt;/div&gt;        &lt;div class=&quot;column6&quot;&gt;&lt;/div&gt;        &lt;div class=&quot;column5&quot;&gt;&lt;/div&gt;        &lt;div class=&quot;column6&quot;&gt;&lt;/div&gt;    &lt;/div&gt;&lt;/body&gt;</code></pre><p>[ 列的间距 ]</p><ul><li><p>column-gap 属性用于设置列于列之间的间距，该属性需要为多列显示时的元素设置</p><ul><li><p>normal:  用于表示使用浏览器定义列的默认间距，默认值 1em</p></li><li><p>length: 必须是正整数，用于表示定义列之间的间距</p><pre><code class="html">&lt;style&gt; .parent &#123;    background-color: #eee;    /* column-count: 6; */    /* column-width: 200px; */    /* 简写属性 */    columns: 5 auto;    column-gap: 20px;&#125;&lt;/style&gt;</code></pre><p>[列的边框 column-rule ]</p></li></ul></li></ul><p>—— column-rule 属性用于定义列于列之间的边框，其中包括边框宽度、边框颜色、边框样式。</p><ul><li>column-rule-width: 列于列之间的边框宽度</li><li>column-rule-color: 列于列之间的边框颜色</li><li>column-rule-style: 列于列之间的边框样式   </li></ul><pre><code class="html">&lt;style&gt;   .parent &#123;       background-color: #eee;       /* column-count: 6; */       /* column-width: 200px; */       /* 简写属性 */       columns: 5 auto;       column-gap: 20px;       /* column-rule-width: 5px;       column-rule-color: #ff0000;       column-rule-style: double; */       /* 简写属性 */       column-rule: 5px #ff0000 double;   &#125;&lt;/style&gt;</code></pre><p> [ 横跨多列 ]</p><ul><li>column-span 属性 用于定义一个列元素是否跨列<ul><li>none：表示元素不跨列</li><li>all: 表示元素跨所有列 </li></ul></li></ul><pre><code class="html">&lt;style&gt;   .column6 &#123;       background-color: #00ff00;       column-span: all;   &#125;&lt;/style&gt;</code></pre><p> [ 列的填充 ]</p><ul><li><p>column-fill 属性用于定义列的高度由内容决定，还是同一高度</p><ul><li><p>auto: 默认值，列的高度由内容绝对</p></li><li><p>balance: 列的高度根据内容最多的一列的高度为准</p><pre><code class="html">&lt;style&gt;.column6,.column7, .column8,.column9 &#123;    /* 浏览器兼容不好 包括chrome浏览器 */    column-fill: balance;&#125;&lt;/style&gt;   &lt;div class=&quot;parent&quot;&gt;        &lt;div class=&quot;column6&quot;&gt;Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum eum dolorum ad quod velit. Corporis inventore alias nostrum dignissimos nihil saepe harum vitae, sint, id voluptate, reprehenderit officiis magnam repellat?&lt;/div&gt;        &lt;div class=&quot;column7&quot;&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur iure dolorum deleniti soluta ipsum at ratione magni recusandae, sapiente necessitatibus, expedita nobis, animi corrupti exercitationem delectus ullam unde sed autem.&lt;/div&gt;        &lt;div class=&quot;column8&quot;&gt;Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius placeat blanditiis harum? Eum, sit corporis illo maxime, nemo excepturi nisi eveniet, error quis ex cum ut nulla sunt aut saepe?            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis debitis officia distinctio cupiditate tempora! Debitis corrupti omnis rerum voluptates laboriosam hic alias repellat nostrum, expedita rem perspiciatis totam maxime labore!        &lt;/div&gt;        &lt;div class=&quot;column9&quot;&gt;Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum, earum. Nobis illo maxime necessitatibus voluptatibus quam nemo blanditiis impedit perferendis, porro delectus eligendi laboriosam voluptate adipisci, culpa vitae accusantium nesciunt.&lt;/div&gt;    &lt;/div&gt;</code></pre></li></ul></li></ul>]]></content>
     
     
     <categories>
